@@ -28,8 +28,13 @@ public class Person4 {
    * @return the modified string
    */
   private String calc(String input) {
-    //Person 4 put your implementation here
-    return null;
+    char[] result = input.toCharArray();
+
+    for (int i = 0; i < result.length; i++) {
+      result[i] += 1;
+    }
+
+    return new String(result);
   }
 
   /**
