@@ -1,0 +1,7 @@
+machine:
+  java:
+    version: oraclejdk8
+
+test:
+  override:
+    - gradle -b jkamat3.gradle jar
