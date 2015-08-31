@@ -22,7 +22,11 @@ dependencies {
 }
 
 jar {
+	// Add a reasonable manifest
     manifest {
         attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain';
     }
+
+	// Add dependency jar!
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
