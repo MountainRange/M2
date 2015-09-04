@@ -8,6 +8,11 @@ repositories {
     }
 }
 
+dependencies {
+	// Need resources.jar as dependency
+	compile name: 'resources'
+}
+
 jar {
     manifest {
         attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain';
