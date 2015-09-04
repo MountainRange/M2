@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+repositories {
+    // Dependencies can be found in the lib folder
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+dependencies {
+    // resources.jar is a dependency for compilation
+    compile name: 'resources'
+}
+
+jar {
+    manifest {
+        // The main class is AntLabMain; resources.jar has a hard-coded path
+        attributes('Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+                   'Class-Path': '../../lib/resources.jar')
+    }
+}
